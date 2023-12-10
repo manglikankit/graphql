@@ -1,0 +1,54 @@
+
+type Mutation{
+    createGraph(graph:GraphInput):Graph
+}
+
+type Query{
+    allGraphs:[Graph]
+    getGraph(graphId:Int):Graph
+}
+
+type Graph {
+    id:ID!
+    title:String
+    description:String
+    price:Int
+    address:String
+}
+
+input GraphInput{
+    title:String
+    description:String
+    price:Int
+    address:String
+}
+
+
+#To fetch all the Data in Postman
+#query {
+#    allGraphs{
+#        id
+#        title
+#    }
+#}
+
+#To get Graph BY ID
+#query {
+#    getGraph(graphId:1){
+#        title
+#        description
+#    }
+#}
+
+#To add data in postman
+#mutation {
+#    createGraph(graph:{
+#        title:"My new title last one",
+#        description:"This is lastest desc",
+#        price:15,
+#        address:"New Delhi INdia"
+#    }){
+#        id
+#        title
+#    }
+#}
